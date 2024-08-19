@@ -1,38 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv='cache-control' content='no-cache'> 
-<meta http-equiv='expires' content='0'> 
-<meta http-equiv='pragma' content='no-cache'>
+        <meta http-equiv='cache-control' content='no-cache'> 
+       <meta http-equiv='expires' content='0'> 
+       <meta http-equiv='pragma' content='no-cache'>  
     <meta charset="UTF-8">
     <meta name="author" content="Muhammad Saadoon">
     <meta name="description" content="this is a page I made for myself, a hecker">
     <title>A hecker</title>
-
-    <script>
-        // Start the audio when the page loads
-        window.onload = function() {
-            var audio = document.getElementById("audio");
-            audio.play();
-        };
-
-        // Stop the audio when the page is unloaded
-        window.onunload = function() {
-            var audio = document.getElementById("audio");
-            audio.pause();
-            audio.currentTime = 0; // Reset the audio to the beginning
-        };
-    </script>
 </head>
 <body>
     <br><br><br><br>
     <h1>Click the image before the song ends if you DON'T want to be hacked</h1>
     <br>
-    <audio id="audio" src="https://raw.githubusercontent.com/cod-md/cod-md.github.io/main/audio.m4a"></audio>
-    
-    <a href="3.html" target="_self">
-        <img src="https://raw.githubusercontent.com/cod-md/cod-md.github.io/main/Hecker.webp" height="400" title="this is legit" >
+
+    <a href="3.html" onclick="stopAudio()">
+        <img src="https://raw.githubusercontent.com/cod-md/cod-md.github.io/main/cutecat.jpg" height="400" title="this is legit">
     </a>
+
+    <script>
+        function stopAudio() {
+            localStorage.setItem("audioPlaying", "false");
+        }
+    </script>
 </body>
 </html>
-
