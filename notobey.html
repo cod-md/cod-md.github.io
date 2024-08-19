@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Sequence</title>
+    <style>
+        #image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #image-container img {
+            width: 400px; /* Set width to 400px */
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>So ...<br>
+    You choose not to obey!<br>
+    You will suffer for your choice
+    </h1>
+    <div id="image-container">
+        <img id="image1" src="images/laughingcat.webp">
+        <img id="image2" src="images/laughingcat2.jpg">
+        <img id="image3" src="images/hackercat.jpg">
+    </div>
+
+    <script>
+        const images = ["image1", "image2", "image3"];
+        let currentImageIndex = 0;
+
+        function showNextImage() {
+            if (currentImageIndex > 0) {
+                document.getElementById(images[currentImageIndex - 1]).style.display = "none";
+            }
+
+            if (currentImageIndex < images.length) {
+                document.getElementById(images[currentImageIndex]).style.display = "block";
+                currentImageIndex++;
+                setTimeout(showNextImage, 2000); // Set timeout to 2 seconds
+            } else {
+                document.getElementById(images[images.length - 1]).style.display = "block"; // Ensure last image stays visible
+            }
+        }
+
+        showNextImage();
+    </script>
+</body>
+</html>
